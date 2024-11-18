@@ -14,7 +14,7 @@
             <Grid Padding="20">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="*" />
-                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="2*" />
                 </Grid.ColumnDefinitions>
                  <Grid.RowDefinitions>
                     <RowDefinition Height="100" />
@@ -63,7 +63,7 @@
                             <RowDefinition Height="550" />
                         </Grid.RowDefinitions>
                         <VerticalStackLayout Grid.Row="0">
-                                <VerticalStackLayout >
+                                <VerticalStackLayout HorizontalOptions="StartAndExpand">
                                     <Label Text="Jan Postulski" Margin="10, 0"/>
                                     <Border  Padding="16" VerticalOptions="Center" Background="#9F33FF" StrokeShape="RoundRectangle 16" Stroke="#9F33FF" Margin="0, 20">
                                         <Label Text="Siema, gdzie jesteś? Czekam na Ciebie pod Twoim blokiem."/>
@@ -77,7 +77,7 @@
                                     </Border>
                                 </VerticalStackLayout>
 
-                                <VerticalStackLayout>
+                            <VerticalStackLayout HorizontalOptions="Start">
                                     <Label Text="Jan Postulski" Margin="10, 0"/>
                                     <Border  Padding="16" VerticalOptions="Center" Background="#9F33FF" StrokeShape="RoundRectangle 16" Stroke="#9F33FF" Margin="0, 20">
                                         <Label Text="Długo Ci to zajmie?"/>
@@ -91,7 +91,7 @@
                                     </Border>
                                 </VerticalStackLayout>
 
-                                <VerticalStackLayout>
+                            <VerticalStackLayout HorizontalOptions="Start">
                                     <Label Text="Jan Postulski" Margin="10, 0"/>
                                     <Border  Padding="16" VerticalOptions="Center" Background="#9F33FF" StrokeShape="RoundRectangle 16" Stroke="#9F33FF" Margin="0, 20">
                                         <Label Text="Dobra, tylko byleby nie dłużej"/>

@@ -6,11 +6,13 @@
     xmlns:local="clr-namespace:Messenger_app"
     Shell.FlyoutBehavior="Disabled"
     Title="Messenger_app"
-    Shell.NavBarIsVisible="False"/>
+    Shell.NavBarIsVisible="False">
 
-<ShellContent
+    <ShellContent
         Title="Home"
         ContentTemplate="{DataTemplate local:MainPage}"
         Route="MainPage" />
+
+</Shell>
 
 
