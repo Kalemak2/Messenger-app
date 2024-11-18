@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Messenger_app.MainPage"
+             xmlns:local="clr-namespace:Messenger_app.View.ViewModel">
+
+
+    <ContentPage.BindingContext>
+        <local:MainPageViewModel />
+    </ContentPage.BindingContext>
+    
+    <ScrollView>
+        
+            <Grid Padding="20">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*" />
+                    <ColumnDefinition Width="*" />
+                </Grid.ColumnDefinitions>
+                 <Grid.RowDefinitions>
+                    <RowDefinition Height="100" />
+                    <RowDefinition Height="*" />
+                </Grid.RowDefinitions>
+
+            <Label Text="Czaty" FontSize="Large" Grid.Row="0" Grid.Column="0" Margin="8"/>
+            <Border Grid.Column="0" Grid.Row="1"  Stroke="#168AFF" StrokeShape="RoundRectangle 2" Margin="8">
+                <CollectionView ItemsSource="{Binding Persons}" >
+                    <CollectionView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid Padding="8" ColumnSpacing="20">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="100" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="100" />
+                                    <RowDefinition Height="*" />
+                                </Grid.RowDefinitions>
+                                <Frame HasShadow="False" Padding="0" CornerRadius="50" WidthRequest="100" HeightRequest="100" VerticalOptions="Center">
+                                    <Image Source="{Binding ImageLink}" 
+                                       WidthRequest="100" 
+                                       HeightRequest="100"/>
+                                </Frame>
+                                <VerticalStackLayout Grid.Column="1" Grid.Row="0" VerticalOptions="Center">
+                                    <Label Text="{Binding Name}" FontSize="Large" VerticalOptions="Center"/>
+                                    <HorizontalStackLayout VerticalOptions="Center">
+                                        <Label Text="Opis:"/>
+                                        <Label Text="{Binding Description}"/>
+                                    </HorizontalStackLayout>
+                                </VerticalStackLayout>
+                            </Grid>
+                        </DataTemplate>
+                    </CollectionView.ItemTemplate>
+                </CollectionView>
+            </Border>
+            <Border Grid.Column="1" Grid.RowSpan="2" Padding="20" Stroke="#168AFF" StrokeShape="RoundRectangle 2" Margin="10">
+                <VerticalStackLayout>
+                    <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="8*" />
+                            <RowDefinition Height="550" />
+                        </Grid.RowDefinitions>
+                        <VerticalStackLayout Grid.Row="0">
+                                <VerticalStackLayout >
+                                    <Label Text="Jan Postulski" Margin="10, 0"/>
+                                    <Border  Padding="16" VerticalOptions="Center" Background="#9F33FF" StrokeShape="RoundRectangle 16" Stroke="#9F33FF" Margin="0, 20">
+                                        <Label Text="Siema, gdzie jesteś? Czekam na Ciebie pod Twoim blokiem."/>
+                                    </Border>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout HorizontalOptions="End">
+                                    <Label Text="Ty"  HorizontalOptions="End" Margin="10, 0"/>
+                                    <Border  Padding="16" VerticalOptions="Center" Background="DodgerBlue" StrokeShape="RoundRectangle 16" Stroke="DodgerBlue"  Margin="0, 20">
+                                        <Label Text="Poczekaj chwilę, jeszcze muszę skończyć projekt, który mam do oddania."/>
+                                    </Border>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout>
+                                    <Label Text="Jan Postulski" Margin="10, 0"/>
+                                    <Border  Padding="16" VerticalOptions="Center" Background="#9F33FF" StrokeShape="RoundRectangle 16" Stroke="#9F33FF" Margin="0, 20">
+                                        <Label Text="Długo Ci to zajmie?"/>
+                                    </Border>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout HorizontalOptions="End">
+                                    <Label Text="Ty"  HorizontalOptions="End" Margin="10, 0"/>
+                                    <Border  Padding="16" VerticalOptions="Center" Background="DodgerBlue" StrokeShape="RoundRectangle 16" Stroke="DodgerBlue" Margin="0, 20">
+                                        <Label Text="Jeszcze tak z 15 minut"/>
+                                    </Border>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout>
+                                    <Label Text="Jan Postulski" Margin="10, 0"/>
+                                    <Border  Padding="16" VerticalOptions="Center" Background="#9F33FF" StrokeShape="RoundRectangle 16" Stroke="#9F33FF" Margin="0, 20">
+                                        <Label Text="Dobra, tylko byleby nie dłużej"/>
+                                    </Border>
+                                </VerticalStackLayout>
+
+                                <VerticalStackLayout HorizontalOptions="End">
+                                    <Label Text="Ty"  HorizontalOptions="End" Margin="10, 0"/>
+                                    <Border  Padding="16" VerticalOptions="Center" Background="DodgerBlue" StrokeShape="RoundRectangle 16" Stroke="DodgerBlue" Margin="0, 20">
+                                        <Label Text="Dobra dobra..."/>
+                                    </Border>
+                                </VerticalStackLayout >
+
+                            </VerticalStackLayout>
+                            <Border Grid.Row="1" VerticalOptions="End">
+
+                                <Grid>
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition Width="10*" />
+                                        <ColumnDefinition Width="*" />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition Height="*" />
+                                    </Grid.RowDefinitions>
+                                    <Entry Placeholder="Wpisz wiadomość do przesłania..." Grid.Column="0"></Entry>
+                                    <Button Text="Wyślij" Grid.Column="1" BackgroundColor="DodgerBlue" TextColor="White"></Button>
+                                </Grid>
+                            </Border>
+                    </Grid>
+                    
+                </VerticalStackLayout>
+            </Border>
+        </Grid>
+    </ScrollView>
+
+</ContentPage>
